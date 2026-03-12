@@ -9,16 +9,14 @@ Cursor: h, j, k, l
 Cursor highlight: v (toggle, highlights from position at the time of toggle to cursor position)
 ### Code:
 Ideally define variables under `; -- prog_vars --` and instructions under `prog_start`. There is a referenceable `data` label (which gets dumped to the screen).
-
 ### Limitations:
-The user has 256 free bytes to have instructions in.
+The user has 256 free bytes to have instructions in.  
 The highlighter can only highlight down and right in relation to its starting position.
-
 ## Build:
 ```
 nasm "bootloader.s" -f bin -o "loader.img"
 ```
 ## Run:
 ```
-qemu-system-i386 -drive file=NAME.img,format=raw
+qemu-system-i386 -drive file=loader.img,format=raw
 ```
